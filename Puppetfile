@@ -6,12 +6,11 @@ forge 'https://forge.puppet.com'
 #mod 'puppetlabs/stdlib',  '6.0.0'
 #mod 'puppetlabs/concat',  '6.0.0'
 
-# Modules from Git
-# Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
-#mod 'apache',
-#  git:    'https://github.com/puppetlabs/puppetlabs-apache',
-#  commit: '1b6f89afdde0df7f9433a163d5c4b5328eac5779'
+mod 'namespace/groups',
+  #install_path: 'modules',  # this is default and implied
+  git:    'https://github.com/some_path/namespace-groups'
 
-#mod 'apache',
-#  git:    'https://github.com/puppetlabs/puppetlabs-apache',
-#  branch: 'docs_experiment'
+# install path will create a directory at the root of the environment.
+mod 'namespace/groups_data',
+  install_path: 'modules-data',     
+  git:    'https://github.com/some_path/namespace-groups_data'
